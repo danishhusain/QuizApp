@@ -1,0 +1,5 @@
+ <Image source={{uri:'https://cdni.iconscout.com/illustration/premium/preview/online-quiz-5718736-4779390.png?w=0&h=1400'}}
+<Image source={{uri:'https://img.freepik.com/free-vector/modern-did-you-know-yellow-banner-with-question-mark_1017-30765.jpg?size=338&ext=jpg&ga=GA1.2.775074327.1668426530'}}
+<TouchableOpacity style={styles.button}>
+                <Text style={styles.buttonText}>Skip</Text>
+                </TouchableOpacity >
