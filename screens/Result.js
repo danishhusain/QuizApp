@@ -1,13 +1,13 @@
 import React from 'react';
 import { View,Text,StyleSheet,Image, TouchableOpacity } from 'react-native';
 
-function result({navigation,route}) {
+function Result({navigation,route}) {
                 
 // const params = route.params
 //     console.log(params)
 const {score} = route.params
     console.log(score)
-const resultBanner= score>30?'https://img.freepik.com/free-vector/golden-winners-cup_1284-18399.jpg?w=740&t=st=1668533793~exp=1668534393~hmac=7ab0cf696307c163872d5f0df2daa0b75a64225c5e6849cb9d6fc0bb213100d3':
+const resultBanner= score>40?'https://img.freepik.com/free-vector/golden-winners-cup_1284-18399.jpg?w=740&t=st=1668533793~exp=1668534393~hmac=7ab0cf696307c163872d5f0df2daa0b75a64225c5e6849cb9d6fc0bb213100d3':
 'https://img.freepik.com/free-photo/debt-ridk-difficulty-downfall-concept_53876-120077.jpg?w=826&t=st=1668534239~exp=1668534839~hmac=8deeb9719798066fe956a7cd101772ba54cea399fad65e4fc5ac754cdecfcfc'
     return ( 
         <View style={styles.Container}>
@@ -28,7 +28,7 @@ const resultBanner= score>30?'https://img.freepik.com/free-vector/golden-winners
      );
 }
 
-export default result;
+export default Result;
 const styles = StyleSheet.create({
     Container: {
         backgroundColor:'white',

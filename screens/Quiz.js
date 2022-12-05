@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import { View,Text, TouchableOpacity,StyleSheet,ActivityIndicator } from 'react-native';
 
+
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -10,7 +11,7 @@ function shuffleArray(array) {
     }
 }
 
-function quiz({navigation}) {
+function Quiz({navigation}) {
     const[questions,setQuestions]=useState()
     const[ques,setQues]=useState(0)
     const[options,setOptions]=useState([])
@@ -20,7 +21,7 @@ function quiz({navigation}) {
         setIsLoading(true)
         let response = await fetch('https://opentdb.com/api.php?amount=10&type=multiple');
           let json = await response.json();
-          console.log(json.results)
+        //   console.log(json.results)
           setQuestions(json.results)
           setOptions(genrateOptionsAndShuffles(json.results[0]))
         setIsLoading(false)
@@ -58,6 +59,7 @@ function quiz({navigation}) {
     const handleShowResult=()=> {
         navigation.navigate('Result',{score:score})
     }
+ 
     return ( 
         <View style={styles.container}>
             {isLoading?<View style={{flex:1,alignItems:'center' , justifyContent:'center',}}>
@@ -65,7 +67,7 @@ function quiz({navigation}) {
                 <Text style={{fontSize:25, fontWeight:'400'}}>Loading</Text></View>:questions &&
             <View style={styles.parent}>
             <View style={styles.top}>
-            <Text style={styles.question}>Q.{ques}:{decodeURIComponent(questions[ques].question)}</Text>
+            <Text style={styles.question}>Q.{ques+1}:{decodeURIComponent( questions[ques].question)}</Text>
             </View>
             <View style={styles.options}>
                 <TouchableOpacity style={styles.textOption} onPress={()=>handleSelectedOption(options[0])}>
@@ -98,7 +100,7 @@ function quiz({navigation}) {
      );
 }
 
-export default quiz;
+export default Quiz;
 const styles = StyleSheet.create({
     container: {
         padding: 12,
@@ -108,16 +110,17 @@ const styles = StyleSheet.create({
     top: {
         marginVertical:8,
         height:100,
-        backgroundColor:"red"
+        // backgroundColor:"red"
 
     },
     options: {
         marginVertical:16,
         flex:1,
-        borderWidth:1,
+        borderWidth: 1,
         borderColor:"black",
+        borderRadius:10,
         padding:10,
-        backgroundColor:"blue",
+        // backgroundColor:"blue",
         
     },
     bottom: {
@@ -135,6 +138,7 @@ const styles = StyleSheet.create({
         margin:60,
         borderRadius:15,
         backgroundColor:'#34A0A4'
+
 
     },
     button: {
