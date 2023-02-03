@@ -1,5 +1,3 @@
-
-
 import React, { useEffect, useState } from 'react';
 import { View,Text, TouchableOpacity,StyleSheet,ActivityIndicator } from 'react-native';
 
