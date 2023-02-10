@@ -5,6 +5,7 @@ import Home from './screens/Home';
 import Quiz from './screens/Quiz';
 import Result from './screens/Result';
 import MyStack from "./navigation/Index"
+// import MyStack from "./navigation/Index"
 
 const App = () => {
   return (
